@@ -1,0 +1,14 @@
+{
+  "resourceName": "pleasework",
+  "policyUUID": "9c27a285",
+  "bucketName": "amplifyfullstackv2034ddb706e15494595ce90160849f",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
