@@ -1,5 +1,3 @@
-// Put your code below this line.
-
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
@@ -9,18 +7,17 @@ import {
   Heading,
   Text,
   TextField,
+  Image,
   View,
   withAuthenticator,
-  Image
 } from "@aws-amplify/ui-react";
 import { listNotes } from "./graphql/queries";
 import {
   createNote as createNoteMutation,
   deleteNote as deleteNoteMutation,
 } from "./graphql/mutations";
-import { uploadData, getUrl, remove } from 'aws-amplify/storage';
-
 import { generateClient } from 'aws-amplify/api';
+import { uploadData, getUrl, remove } from 'aws-amplify/storage';
 
 const client = generateClient();
 
@@ -38,7 +35,7 @@ const App = ({ signOut }) => {
       notesFromAPI.map(async (note) => {
         if (note.image) {
           const url = await getUrl({ key: note.name });
-          note.image = url.url;
+          note.image = url.url;  
         }
         return note;
       })
@@ -55,7 +52,10 @@ const App = ({ signOut }) => {
       description: form.get("description"),
       image: image.name,
     };
-    if (!!data.image) await uploadData({ key: data.name, data: image });
+    if (!!data.image) await uploadData({
+      key: data.name,
+      data: image
+    });
     await client.graphql({
       query: createNoteMutation,
       variables: { input: data },
@@ -99,7 +99,7 @@ const App = ({ signOut }) => {
             name="image"
             as="input"
             type="file"
-            style={({alignSelf:"end"})}
+            style={{ alignSelf: "end" }}
           />
           <Button type="submit" variation="primary">
             Create Note
