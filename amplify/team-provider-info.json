@@ -19,7 +19,7 @@
         "amplifyfullstackv2": {}
       },
       "storage": {
-        "imageStorage": {}
+        "imagestorage": {}
       }
     }
   }

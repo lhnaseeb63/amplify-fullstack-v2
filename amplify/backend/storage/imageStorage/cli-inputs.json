@@ -1,7 +1,7 @@
 {
-  "resourceName": "imageStorage",
-  "policyUUID": "363edd9b",
-  "bucketName": "amplifyfullstackv2b01e32ad91bf422e80b05e79afe46",
+  "resourceName": "imagestorage",
+  "policyUUID": "38777ea1",
+  "bucketName": "amplifyfullstackv20e9f19b9225b473488d49e8447c20",
   "storageAccess": "auth",
   "guestAccess": [],
   "authAccess": [
